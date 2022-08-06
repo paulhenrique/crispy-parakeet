@@ -4,6 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { useDispatch } from "react-redux";
 import { changeRoute } from "../../store/features/routerReducer";
+import { Container } from "@mui/material";
 
 export default function AppBar() {
   const dispatch = useDispatch();
@@ -12,23 +13,28 @@ export default function AppBar() {
   return (
     <Box sx={{ flexGrow: 1 }} mb="79px">
       <AppBarMui position="fixed">
-        <Toolbar>
-          <Box sx={{ flexGrow: 1 }}>
-            <Button color="inherit" onClick={() => changeRouteDispatch("/")}>
-              MensApp
-            </Button>
-          </Box>
+        <Container>
+          <Toolbar>
+            <Box sx={{ flexGrow: 1 }}>
+              <Button color="inherit" onClick={() => changeRouteDispatch("/")}>
+                MensApp
+              </Button>
+            </Box>
 
-          <Button color="inherit" onClick={() => changeRouteDispatch("/login")}>
-            Login
-          </Button>
-          <Button
-            color="inherit"
-            onClick={() => changeRouteDispatch("/register")}
-          >
-            Cadastro
-          </Button>
-        </Toolbar>
+            <Button
+              color="inherit"
+              onClick={() => changeRouteDispatch("/login")}
+            >
+              Login
+            </Button>
+            <Button
+              color="inherit"
+              onClick={() => changeRouteDispatch("/register")}
+            >
+              Cadastro
+            </Button>
+          </Toolbar>
+        </Container>
       </AppBarMui>
     </Box>
   );
