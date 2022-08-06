@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
+import routerReducer from './features/routerReducer'
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    router: routerReducer
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

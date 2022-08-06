@@ -1,19 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-
-const ROUTES = [
-  {
-    path: "/",
-    component: Home,
-  },
-];
+import { RedirectHandler } from "./RedirectHandler";
+import { ROUTES } from "./ROUTES";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         {ROUTES.map(({ path, component: Component }) => (
-          <Route key={path} path={path} element={<Component />} />
+          <Route
+            key={path}
+            path={path}
+            element={
+              <>
+                <RedirectHandler />
+                <Component />
+              </>
+            }
+          />
         ))}
       </Routes>
     </BrowserRouter>
