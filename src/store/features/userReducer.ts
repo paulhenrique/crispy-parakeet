@@ -1,27 +1,28 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { User } from '../../types';
 
 export interface userState {
-  currentRoute: string;
-  leftRoute: string
+  currentUser: User | null ;
 }
 
 const initialState: userState = {
-  currentRoute: '/',
-  leftRoute: ''
+  currentUser: null
 }
 
-export const routerSlice = createSlice({
+export const userSlice = createSlice({
   name: 'router',
   initialState,
   reducers: {
-    changeRoute: (state: userState, action: PayloadAction<string>) => {
-      state.leftRoute = state.currentRoute
-      state.currentRoute = action.payload
+    doLogin: (state: userState, action: PayloadAction<User>) => {
+      state.currentUser = action.payload
+    },
+    doLogout: (state: userState) => {
+      state.currentUser = null
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { changeRoute } = routerSlice.actions
+export const { doLogin, doLogout } = userSlice.actions
 
-export default routerSlice.reducer
+export default userSlice.reducer

@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import routerReducer from './features/routerReducer'
+import userReducer from './features/userReducer'
 
 export const store = configureStore({
   reducer: {
-    router: routerReducer
+    router: routerReducer,
+    users: userReducer
   },
 })
 
