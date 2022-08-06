@@ -1,10 +1,10 @@
 export interface Message {
-  id: number
+  id?: number
   userId: number
   description: string
-  createdAt: string
-  updatedAt: string
-  user: User
+  createdAt?: string
+  updatedAt?: string
+  user?: User
 }
 
 export interface User {
