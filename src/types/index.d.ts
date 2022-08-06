@@ -8,6 +8,10 @@ export interface Message {
 }
 
 export interface User {
+  id: number
   name: string
+  password: string
   picture: string
+  createdAt: string
+  updatedAt: string
 }
